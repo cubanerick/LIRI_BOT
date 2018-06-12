@@ -44,8 +44,17 @@ function getmytweets() {
         if (error) {
             console.log("Error occured: " + error)
         } else {
-            console.log(tweets);
-            log(tweets);
+            var tweetdata = tweets;
+            // console.log(tweetdata);
+            log("\nTweets\n")
+            for(var i = 0; i < tweetdata.length; i++) {
+                console.log("On " + tweetdata[i].created_at + ", \n you tweeted '" + tweetdata[i].text + "'.");
+                log("\nOn " + tweetdata[i].created_at + ", \n you tweeted '" + tweetdata[i].text + "'.");
+                for(var j = 0; j < tweetdata[i].entities.hashtags.length; j++) {
+                    console.log("#" + tweetdata[i].entities.hashtags[j].text);
+                    log("#" + tweetdata[i].entities.hashtags[j].text);
+                }
+            }
         }
 
     });
@@ -67,10 +76,11 @@ function spotifythissong() {
                 console.log('Album Name: ' + data.tracks.items[7].album.name);
                 console.log("Song name: " + data.tracks.items[7].name);
                 console.log("Link: " + data.tracks.items[7].preview_url);
-                log("Artists: " + data.tracks.items[7].artists[0].name);
-                log('Album Name: ' + data.tracks.items[7].album.name);
-                log("Song name: " + data.tracks.items[7].name);
-                log("Link: " + data.tracks.items[7].preview_url);
+                log("\nSong\n");
+                log("\nArtists: " + data.tracks.items[7].artists[0].name);
+                log("\nAlbum Name: " + data.tracks.items[7].album.name);
+                log("\nSong name: " + data.tracks.items[7].name);
+                log("\nLink: " + data.tracks.items[7].preview_url);
             }
         });
     }else {
@@ -82,10 +92,11 @@ function spotifythissong() {
                 console.log("Album Name: " + data.tracks.items[0].album.name);
                 console.log("Song name: " + data.tracks.items[0].name);
                 console.log("Link: " + data.tracks.items[0].preview_url);
-                log("Artists: " + data.tracks.items[0].artists[0].name);
-                log("Album Name: " + data.tracks.items[0].album.name);
-                log("Song name: " + data.tracks.items[0].name);
-                log("Link: " + data.tracks.items[0].preview_url);
+                log("\nSong\n");
+                log("\nArtist: " + data.tracks.items[0].artists[0].name);
+                log("\nAlbum Name: " + data.tracks.items[0].album.name);
+                log("\nSong name: " + data.tracks.items[0].name);
+                log("\nLink: " + data.tracks.items[0].preview_url);
             }
         });
     }
@@ -117,14 +128,15 @@ function getmovieinfo() {
                     console.log("Language: " + results.Language);
                     console.log("Plot: " + results.Plot);
                     console.log("Actors: " + results.Actors);
-                    log("Title: " + results.Title);
-                    log("Release Year: " + results.Year);
-                    log("IMDB Rating: " + results.Ratings[0].Value);
-                    log("Rotten Tomatoes Rating: " + results.Ratings[1].Value);
-                    log("Produced in: " + results.Country);
-                    log("Language: " + results.Language);
-                    log("Plot: " + results.Plot);
-                    log("Actors: " + results.Actors);
+                    log("\nMovie\n");
+                    log("\nTitle: " + results.Title);
+                    log("\nRelease Year: " + results.Year);
+                    log("\nIMDB Rating: " + results.Ratings[0].Value);
+                    log("\nRotten Tomatoes Rating: " + results.Ratings[1].Value);
+                    log("\nProduced in: " + results.Country);
+                    log("\nLanguage: " + results.Language);
+                    log("\nPlot: " + results.Plot);
+                    log("\nActors: " + results.Actors);
                 }
             })
         }
@@ -161,10 +173,11 @@ function getcommandtxt(){
                             console.log("Album Name: " + data.tracks.items[0].album.name);
                             console.log("Song name: " + data.tracks.items[0].name);
                             console.log("Link: " + data.tracks.items[0].preview_url);
-                            log("Artist: " + data.tracks.items[0].artists[0].name);
-                            log("Album Name: " + data.tracks.items[0].album.name);
-                            log("Song name: " + data.tracks.items[0].name);
-                            log("Link: " + data.tracks.items[0].preview_url);
+                            log("\nSong\n");
+                            log("\nArtist: " + data.tracks.items[0].artists[0].name);
+                            log("\nAlbum Name: " + data.tracks.items[0].album.name);
+                            log("\nSong name: " + data.tracks.items[0].name);
+                            log("\nLink: " + data.tracks.items[0].preview_url);
                         }
                     });
                 break;
@@ -190,14 +203,15 @@ function getcommandtxt(){
                                 console.log("Language: " + results.Language);
                                 console.log("Plot: " + results.Plot);
                                 console.log("Actors: " + results.Actors);
-                                log("Title: " + results.Title);
-                                log("Release Year: " + results.Year);
-                                log("IMDB Rating: " + results.Ratings[0].Value);
-                                log("Rotten Tomatoes Rating: " + results.Ratings[1].Value);
-                                log("Produced in: " + results.Country);
-                                log("Language: " + results.Language);
-                                log("Plot: " + results.Plot);
-                                log("Actors: " + results.Actors);
+                                log("\nMovie\n");
+                                log("\nTitle: " + results.Title);
+                                log("\nRelease Year: " + results.Year);
+                                log("\nIMDB Rating: " + results.Ratings[0].Value);
+                                log("\nRotten Tomatoes Rating: " + results.Ratings[1].Value);
+                                log("\nProduced in: " + results.Country);
+                                log("\nLanguage: " + results.Language);
+                                log("\nPlot: " + results.Plot);
+                                log("\nActors: " + results.Actors);
                             }
                         })
                     }
